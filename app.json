@@ -1,0 +1,72 @@
+{
+  "name": "File Store",
+  "description": "Telegram bot to store your telegram files",
+  "keywords": [
+    "telegram",
+    "best",
+    "Store",
+    "Files"
+  ],
+  "logo": "https://telegra.ph/file/ae6dc68114f35bcbdd62b.jpg",
+  "success_url": "https://t.me/File_store_mn_Bot",
+  "website": "https://github.com/Whitedeviljoypow/TG-FILE-STORE-BOT",
+  "repository": "https://github.com/Whitedeviljoypow/TG-FILE-STORE-BOT",
+  "env": {
+    "WEBHOOK": {
+      "description": "Setting this to ANYTHING will enable webhooks when in env mode",
+      "value": "ANYTHING"
+    },
+    "BOT_TOKEN": {
+      "description": "Your bot token, as a string.",
+      "value": ""
+    },
+    "API_ID": {
+      "description": "Get this value from https://my.telegram.org",
+      "value": ""
+    },
+    "DB_CHANNEL_ID": {
+      "description": "give me the telegram channel ID here (better this should be private channel)",
+      "value": ""
+    },
+    "UPDATE_CHANNEL": {
+      "description": "Your bot updates channel like MN_BOTZ_UPDATES (username without @ for forcesub). (Leave empty it you don't want to add)",
+      "value": "",
+      "required": false
+    },
+    "OWNER_ID": {
+      "description": "give your telegram user id here",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "Get this value from https://my.telegram.org",
+      "value": ""
+    },
+    "AUTH_USERS": {
+      "description": "Add authorized userids if u are using IS_PRIVATE",
+      "value": "",
+      "required": false
+    },
+    "IS_PRIVATE": {
+      "description": "Add True if you want to use as Private",
+      "value": "",
+      "required": false
+    }
+  },
+  "addons": [
+  {
+    "plan": "heroku-postgresql",
+    "options": {"version": "12"}
+  }
+  ],
+  "buildpacks": [{
+    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+  }, {
+    "url": "heroku/python"
+  }],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
